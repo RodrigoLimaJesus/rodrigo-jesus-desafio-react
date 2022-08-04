@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BsArrowLeftSquare } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import ProfileData from './components/ProfileData';
@@ -7,12 +7,6 @@ import Repositories from './components/Repositories';
 export default function Details({ userData }) {
   const navigate = useNavigate();
   const { userInfo, userRepos } = userData;
-
-  useEffect(() => {
-    if (!userData.userInfo) {
-      navigate('/');
-    }
-  }, [userData, navigate]);
 
   return (
     <div className="p-2 sm:p-4 md:p-8">
@@ -25,10 +19,16 @@ export default function Details({ userData }) {
         <BsArrowLeftSquare className="mr-2" /> Buscar novamente
       </button>
 
-      <main className="flex flex-col px-8 md:flex-row">
-        {userData.userInfo && <ProfileData userInfo={userInfo} />}
-        {userData.userRepos && <Repositories userRepos={userRepos} />}
-      </main>
+      {userData.userInfo ? (
+        <main className="flex flex-col px-8 md:flex-row">
+          {userData.userInfo && <ProfileData userInfo={userInfo} />}
+          {userData.userRepos && <Repositories userRepos={userRepos} />}
+        </main>
+      ) : (
+        <span className="text-red-500 font-bold">
+          Parece que você não pesquisou nada.
+        </span>
+      )}
     </div>
   );
 }
