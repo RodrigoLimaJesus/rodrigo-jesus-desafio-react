@@ -43,7 +43,7 @@ describe('Testes para página de busca', () => {
   it('Ao buscar com um nome inválido, é retornado o erro esperado', async () => {
     render(<App />, { wrapper: BrowserRouter });
     axios.get.mockImplementation(() => {
-      throw new Error('qualquer coisa');
+      throw new Error('Mensagem automáica para gerar erro');
     });
 
     const message =

@@ -24,7 +24,7 @@ export default function Repositories({ userRepos }) {
       </h2>
 
       {countRepos === 0 ? (
-        <span className="pb-4">
+        <span data-testid="no-repositories-found" className="pb-4">
           Parece que esta pessoa não possui nenhum repositório público.
         </span>
       ) : (
