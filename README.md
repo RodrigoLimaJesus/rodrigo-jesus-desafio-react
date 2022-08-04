@@ -29,6 +29,6 @@ Você pode optar por duas formas de testar a aplicação:
 
 - `npm test`
 
-2. Rodar um teste específico, para isso rode o comando anterior mais o nome do teste desejado, exemplo:
+1. Rodar um teste específico, para isso rode o comando anterior + o nome do teste desejado, exemplo:
 
 - `npm test Search.test.js`, ou apenas `npm test Search`
