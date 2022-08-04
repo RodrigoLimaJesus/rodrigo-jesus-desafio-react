@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as BS from 'react-icons/bs';
+import { BsSearch } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import { getUserData } from '../../services';
 
@@ -69,7 +69,7 @@ export default function Search({ setUserData }) {
           rounded-md
           "
         >
-          <BS.BsSearch className="mr-2" />
+          <BsSearch className="mr-2" />
           Buscar
         </button>
       </form>

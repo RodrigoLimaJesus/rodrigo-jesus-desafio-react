@@ -10,6 +10,8 @@ export async function getUserData(username) {
 
     return { userInfo: userInfo.data, userRepos: userRepos.data };
   } catch (error) {
+    console.log(error.message);
+
     return { message: error.message || 'Erro interno' };
   }
 }
