@@ -47,10 +47,12 @@ export default function ProfileData({ userInfo }) {
         </span>
       </div>
 
-      <span>
-        <MdMailOutline className="inline-block text-xl" />
-        <span> {email}</span>
-      </span>
+      {email && (
+        <span>
+          <MdMailOutline className="inline-block text-xl" />
+          <span> {email}</span>
+        </span>
+      )}
     </div>
   );
 }

@@ -77,21 +77,23 @@ export default function ProjectCard({ repoDetails }) {
         {name}
       </a>
 
-      <p className="mb-3 text-slate-600">{description}</p>
+      {description && <p className="mb-3 text-slate-600">{description}</p>}
 
-      <ul className="flex flex-wrap mb-3">
-        {topics.map((topic) => (
-          <li
-            key={`${topic}-${name}`}
-            className="m-1 py-1 px-2 bg-sky-600 text-white rounded-lg"
-          >
-            {topic}
-          </li>
-        ))}
-      </ul>
+      {topics && (
+        <ul className="flex flex-wrap mb-3">
+          {topics.map((topic) => (
+            <li
+              key={`${topic}-${name}`}
+              className="m-1 py-1 px-2 bg-sky-600 text-white rounded-lg"
+            >
+              {topic}
+            </li>
+          ))}
+        </ul>
+      )}
 
       <div className="flex flex-wrap font-bold">
-        <span className="text-orange-700">{language}</span>
+        {language && <span className="text-orange-700">{language}</span>}
 
         <span className="mx-3">
           <BiGitRepoForked className="inline-block" />
