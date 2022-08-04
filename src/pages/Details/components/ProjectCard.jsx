@@ -69,6 +69,7 @@ export default function ProjectCard({ repoDetails }) {
       "
     >
       <a
+        data-testid={`repo-name-${name}`}
         href={html_url}
         target="_blank"
         rel="noreferrer"
@@ -77,30 +78,45 @@ export default function ProjectCard({ repoDetails }) {
         {name}
       </a>
 
-      {description && <p className="mb-3 text-slate-600">{description}</p>}
-
-      {topics && (
-        <ul className="flex flex-wrap mb-3">
-          {topics.map((topic) => (
-            <li
-              key={`${topic}-${name}`}
-              className="m-1 py-1 px-2 bg-sky-600 text-white rounded-lg"
-            >
-              {topic}
-            </li>
-          ))}
-        </ul>
+      {description && (
+        <p
+          data-testid={`repo-description-${name}`}
+          className="mb-3 text-slate-600"
+        >
+          {description}
+        </p>
       )}
 
-      <div className="flex flex-wrap font-bold">
-        {language && <span className="text-orange-700">{language}</span>}
+      <ul className="flex flex-wrap mb-3">
+        {topics.map((topic) => (
+          <li
+            data-testid={`repo-topic-${topic}-${name}`}
+            key={`${topic}-${name}`}
+            className="m-1 py-1 px-2 bg-sky-600 text-white rounded-lg"
+          >
+            {topic}
+          </li>
+        ))}
+      </ul>
 
-        <span className="mx-3">
+      <div className="flex flex-wrap font-bold">
+        {language && (
+          <span
+            data-testid={`repo-language-${name}`}
+            className="text-orange-700"
+          >
+            {language}
+          </span>
+        )}
+
+        <span data-testid={`repo-forkCount-${name}`} className="mx-3">
           <BiGitRepoForked className="inline-block" />
           <span>{forks_count}</span>
         </span>
 
-        <span>{handleRepoUpdatedAt()}</span>
+        <span data-testid={`repo-updateAt-${name}`}>
+          {handleRepoUpdatedAt()}
+        </span>
       </div>
     </div>
   );

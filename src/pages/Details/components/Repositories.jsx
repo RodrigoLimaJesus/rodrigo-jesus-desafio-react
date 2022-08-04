@@ -18,7 +18,10 @@ export default function Repositories({ userRepos }) {
       >
         <GrBook className="inline-block" />
         <span className="mx-2">Repositories</span>
-        <span className="bg-slate-300 rounded-full p-1">
+        <span
+          data-testid="count-repos"
+          className="bg-slate-300 rounded-full p-1"
+        >
           {countRepos <= 9 ? `0${countRepos}` : '+9'}
         </span>
       </h2>
