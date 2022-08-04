@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as BS from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
-import getUserData from '../../services/getUserData';
+import { getUserData } from '../../services';
 
 export default function Search({ setUserData }) {
   const [inputValue, setInputValue] = useState('');
@@ -37,11 +37,13 @@ export default function Search({ setUserData }) {
     >
       <form onSubmit={handleSubmit} className="flex items-end">
         <label
+          data-testid="label-input-username"
           htmlFor="input-username"
           className="flex flex-col font-bold mr-4"
         >
           Buscar Repositório no github
           <input
+            data-testid="input-username"
             placeholder="digite o nome do usuário"
             id="input-username"
             type="text"
@@ -56,6 +58,7 @@ export default function Search({ setUserData }) {
         </label>
 
         <button
+          data-testid="submit-form-btn"
           type="submit"
           className="
           flex items-center
@@ -72,12 +75,12 @@ export default function Search({ setUserData }) {
       </form>
 
       {showEmptyUserError && (
-        <span className="text-red-500 mt-4">
+        <span data-testid="error-empty-user" className="text-red-500 mt-4">
           Informe um nome de usuário válido no github.
         </span>
       )}
       {showInvalidUserError && (
-        <span className="text-red-500 mt-4">
+        <span data-testid="error-invalid-user" className="text-red-500 mt-4">
           Usuário não encontrado no github. Verifique se você digitou o nome
           corretamente.
         </span>
