@@ -7,9 +7,11 @@ Para ver o deploy deste projeto, [clique aqui!](https://atlas-rodrigolimajesus.v
 
 1. Clonar o projeto para sua máquina
 
-- `git clone git@github.com:RodrigoLimaJesus/rodrigo-jesus-desafio-react.git`
+- Github: `git clone git@github.com:RodrigoLimaJesus/rodrigo-jesus-desafio-react.git`
 
-2. Entrar no diretório da aplicação.
+- Gitlab: `git clone git@gitlab.com:RodrigoLimaJesus/rodrigo-jesus-desafio-react.git`
+
+1. Entrar no diretório da aplicação.
 
 - `cd rodrigo-jesus-desafio-react`
 
