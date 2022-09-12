@@ -1,7 +1,9 @@
 # Atlas Segurança e Inteligência Logística
 
 Bem vindo(a).
-Para ver o deploy deste projeto, [clique aqui!](https://atlas-rodrigolimajesus.vercel.app/)
+Este prrojeto consiste em um buscador de usuários no GitHub através do seu respectivo nome de usuário.
+
+Obs: O projeto está sem um deploy ativo, porém ainda pode ser clonado e usado na sua máquina normalmente.
 
 ## Para rodar a aplicação na sua máquina basta
 
